@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教師 AI 工具箱</title>
+
 <style>
 :root {
   --blue: #3978bd;
@@ -12,22 +13,44 @@
   --bg: #f3f7fc;
   --muted: #64748b;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   background: var(--bg);
   color: #25364a;
 }
+
 header {
   background: linear-gradient(135deg, #dcecff, #f4f8ff);
   padding: 48px 20px 38px;
   text-align: center;
 }
-.logo { font-size: 42px; }
-h1 { color: var(--dark); margin: 10px 0; }
-.subtitle { color: #5c7592; line-height: 1.8; }
-main { max-width: 1100px; margin: auto; padding: 26px 20px 50px; }
+
+.logo {
+  font-size: 42px;
+}
+
+h1 {
+  color: var(--dark);
+  margin: 10px 0;
+}
+
+.subtitle {
+  color: #5c7592;
+  line-height: 1.8;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 26px 20px 50px;
+}
+
 .search {
   width: 100%;
   padding: 14px 16px;
@@ -38,16 +61,19 @@ main { max-width: 1100px; margin: auto; padding: 26px 20px 50px; }
   margin-bottom: 28px;
   outline-color: var(--blue);
 }
+
 .section-title {
   color: var(--dark);
   margin: 30px 0 14px;
   font-size: 20px;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
+
 .tool {
   background: white;
   border: 1px solid #e2eaf4;
@@ -60,28 +86,76 @@ main { max-width: 1100px; margin: auto; padding: 26px 20px 50px; }
   min-height: 190px;
   transition: transform .2s, box-shadow .2s;
 }
+
 .tool:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px #244b7617;
   border-color: #b9d5f5;
 }
-.icon { font-size: 30px; margin-bottom: 12px; }
-.tool h3 { margin: 0 0 9px; color: #294f7b; font-size: 18px; }
-.tool p { color: var(--muted); line-height: 1.7; font-size: 14px; margin: 0 0 18px; }
-.open { color: var(--blue); font-weight: bold; margin-top: auto; font-size: 14px; }
-.empty { display: none; color: var(--muted); text-align: center; padding: 30px; }
-footer { text-align: center; padding: 24px; color: #8190a3; font-size: 13px; }
-@media (max-width: 760px) {
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  header { padding: 34px 16px; }
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 12px;
 }
+
+.tool h3 {
+  margin: 0 0 9px;
+  color: #294f7b;
+  font-size: 18px;
+}
+
+.tool p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+.open {
+  color: var(--blue);
+  font-weight: bold;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+.empty {
+  display: none;
+  color: var(--muted);
+  text-align: center;
+  padding: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #8190a3;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header {
+    padding: 34px 16px;
+  }
+}
+
 @media (max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
-  .tool { min-height: 155px; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool {
+    min-height: 155px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo">🎓</div>
   <h1>教師 AI 工具箱</h1>
@@ -92,79 +166,133 @@ footer { text-align: center; padding: 24px; color: #8190a3; font-size: 13px; }
 </header>
 
 <main>
-  <input id="search" class="search" type="search"
-    placeholder="🔎 搜尋工具名稱或功能，例如：公文、評語、乘法">
 
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="🔎 搜尋工具名稱或功能，例如：公文、評語、乘法"
+    aria-label="搜尋 AI 工具"
+  >
+
+  <!-- 教學與學習 -->
   <section class="category">
     <h2 class="section-title">📚 教學與學習</h2>
+
     <div class="grid">
-      <a class="tool" href="https://11569504-sys.github.io/english-slang/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/english-slang/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">💬</div>
         <h3>英語俚語漫畫機器人</h3>
         <p>用漫畫情境學習英語俚語，幫助學生複習課程內容。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
-      <a class="tool" href="https://11569504-sys.github.io/times-table/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/times-table/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">🔢</div>
         <h3>九九乘法練習</h3>
         <p>透過互動練習，提升學生九九乘法的熟練度。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
-      <a class="tool" href="https://media-literacy-ai.onrender.com/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://media-literacy-ai.onrender.com/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">📰</div>
         <h3>媒體素養故事生成器</h3>
         <p>協助設計適合學生閱讀的媒體素養故事與教學內容。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
+
     </div>
   </section>
 
+  <!-- 教師行政 -->
   <section class="category">
     <h2 class="section-title">🗂️ 教師行政</h2>
+
     <div class="grid">
-      <a class="tool" href="https://11569504-sys.github.io/generate-notification-slip/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/generate-notification-slip/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">📋</div>
         <h3>通知單生成器</h3>
         <p>協助整理通知內容，製作清楚易讀的班級通知單。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
-      <a class="tool" href="https://11569504-sys.github.io/comment-helper/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/comment-helper/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">✍️</div>
         <h3>評語小幫手</h3>
         <p>協助教師撰寫學生學期評語，整理正向且具體的描述。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
-      <a class="tool" href="https://11569504-sys.github.io/school-document-assistant/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/school-document-assistant/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">📄</div>
         <h3>校務公文小幫手</h3>
         <p>協助擬寫、整理與潤飾學校行政公文草稿。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
+
     </div>
   </section>
 
+  <!-- 親師溝通 -->
   <section class="category">
     <h2 class="section-title">🤝 親師溝通</h2>
+
     <div class="grid">
-      <a class="tool" href="https://11569504-sys.github.io/reply-parent/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/reply-parent/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">💌</div>
         <h3>家長訊息回覆助手</h3>
         <p>協助教師擬定適切、清楚且有禮貌的家長訊息回覆。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
-      <a class="tool" href="https://11569504-sys.github.io/Smart-Blackboard-Communication-Log/" target="_blank" rel="noopener">
+
+      <a class="tool"
+         href="https://11569504-sys.github.io/Smart-Blackboard-Communication-Log/"
+         target="_blank" rel="noopener noreferrer">
         <div class="icon">📔</div>
         <h3>智慧聯絡簿溝通紀錄</h3>
         <p>協助整理班級聯絡與親師溝通紀錄。</p>
         <span class="open">開啟工具 ↗</span>
       </a>
+
+      <!-- 新增：親師溝通情境模擬練習器 -->
+      <a class="tool"
+         href="https://parent-teacher-simulator.onrender.com/"
+         target="_blank" rel="noopener noreferrer">
+        <div class="icon">🤝</div>
+        <h3>親師溝通情境模擬練習器</h3>
+        <p>模擬教師與家長的真實對話，練習同理傾聽、專業表達與問題解決，並取得 AI 回饋。</p>
+        <span class="open">開啟工具 ↗</span>
+      </a>
+
     </div>
   </section>
 
-  <p id="empty" class="empty">找不到符合的工具，請試試其他關鍵字。</p>
+  <p id="empty" class="empty">
+    找不到符合的工具，請試試其他關鍵字。
+  </p>
+
 </main>
 
-<footer>教師 AI 工具箱｜讓教學與行政更有效率</footer>
+<footer>
+  教師 AI 工具箱｜讓教學與行政更有效率
+</footer>
 
 <script>
 const search = document.getElementById("search");
@@ -177,19 +305,27 @@ search.addEventListener("input", () => {
   let total = 0;
 
   tools.forEach(tool => {
-    const matched = tool.textContent.toLowerCase().includes(keyword);
+    const matched = tool.textContent
+      .toLowerCase()
+      .includes(keyword);
+
     tool.style.display = matched ? "flex" : "none";
-    if (matched) total++;
+
+    if (matched) {
+      total++;
+    }
   });
 
   categories.forEach(section => {
     const hasVisible = [...section.querySelectorAll(".tool")]
       .some(tool => tool.style.display !== "none");
+
     section.style.display = hasVisible ? "block" : "none";
   });
 
   empty.style.display = total ? "none" : "block";
 });
 </script>
+
 </body>
 </html>
